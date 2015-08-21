@@ -13,3 +13,7 @@
 
 Route::get('/',["as"=>"home","uses"=>"TwitterController@index"]);
 Route::post('/tweet',["as"=>"searc_tweet","uses"=>"TwitterController@search"]);
+Route::get('/tweet',["as"=>"searc_tweet_get","uses"=>function(){
+
+	return Redirect()->route('home');
+}]);
